@@ -29,7 +29,7 @@ public class CatalogController {
         return ResponseEntity.ok(catalogService.findAll(offset, limit));
     }
 
-    @GetMapping(value = "/{id}", produces = org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @GetMapping(value = "/{id}/products", produces = org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<List<ProductResponse>> findAllProductsFromCategory(@PathVariable("id") Long id){
         return ResponseEntity.ok(catalogService.findAllProductFromCatalogId(id));
     }
