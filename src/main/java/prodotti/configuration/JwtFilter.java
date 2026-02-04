@@ -1,8 +1,5 @@
 package prodotti.configuration;
 
-import anagrafica.exception.RestException;
-import anagrafica.service.auth.RouteAuthorizationService;
-import anagrafica.utils.JwtUtil;
 import jakarta.security.auth.message.AuthException;
 import jakarta.servlet.*;
 import jakarta.servlet.http.HttpServletRequest;
