@@ -16,6 +16,6 @@ public interface CatalogRepository extends JpaRepository<Catalog, Long> {
     @Query("SELECT c FROM Catalog c WHERE c.isDeleted = false")
     Page<Catalog> findAllNotDeleted(Pageable pageable);
 
-    @Query("SELECT c FORM Catalog c WHERE c.name = :name AND c.isDeleted = false")
+    @Query("SELECT c FROM Catalog c WHERE c.name = :name AND c.isDeleted = false")
     Optional<Catalog> findByName(@Param("name") final String name);
 }
