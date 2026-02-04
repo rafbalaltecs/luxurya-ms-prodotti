@@ -9,16 +9,16 @@ import java.time.LocalDateTime;
 
 @MappedSuperclass
 public class AuditableEntity {
-    @Column(name = "CreatedAt", nullable = false, updatable = false)
+    @Column(name = "createdat", nullable = false, updatable = false)
     private LocalDateTime createdAt;
 
-    @Column(name = "UpdatedAt")
+    @Column(name = "updatedat")
     private LocalDateTime updatedAt;
-    @Column(name = "CreatedBy")
+    @Column(name = "createdby")
     private Long createdBy;
-    @Column(name = "UpdatedBy")
+    @Column(name = "updatedby")
     private Long updatedBy;
-    @Column(name = "IsDeleted")
+    @Column(name = "isDeleted")
     private Boolean isDeleted;
 
     @PrePersist
@@ -26,6 +26,7 @@ public class AuditableEntity {
         final LocalDateTime localDateTime = LocalDateTime.now();
         this.createdAt = localDateTime;
         this.updatedAt = localDateTime;
+        this.isDeleted = Boolean.FALSE;
     }
 
     @PreUpdate
